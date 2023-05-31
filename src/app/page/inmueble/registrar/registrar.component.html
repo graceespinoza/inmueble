@@ -1,0 +1,43 @@
+
+
+<div class="table-t">
+
+    <form [formGroup]="inmuForm" (ngSubmit)="guardar($event)" method="POST">
+        <div id="formulario">
+            <h1> Crear un Inmueble </h1>
+        </div>
+
+        <div id="tabla-formulario">
+            <label for="nombre">Nombres</label>
+            <input placeholder="Ingrese su nombre..." formControlName="nombre" type="text" id="tabla1">
+
+            <label for="direccion">Direccion </label>
+            <input placeholder="Escriba Direccion" formControlName="direccion" type="text" id="tabla2">
+
+            <label for="precio">Precio </label>
+            <input placeholder="Escriba precio" formControlName="precio" type="number" id="tabla3">
+
+          
+            <label for="tipo_inmuble">Tipo_inmueble </label>
+            <input placeholder="Escriba Tipo de inmueble" formControlName="tipo_inmuble" type="text" id="tabla5">
+
+            <label for="usuarios">Usuarios </label>
+            <select  aria-label="Default select example" formControlName="usuarios" id="tabla" class="form-select"> Usuarios
+            
+                <option [ngValue]="item" *ngFor="let item of usuarios">
+                        {{item.nombre}}
+                </option>
+            </select>
+            
+
+        </div>
+        <button name="registro" type="submit" class="btn btn-danger btn-sm m-2"  id="button"> ¡Registrarse! </button>
+
+        
+    </form>
+     
+    <button name="registro" type="submit" class="btn btn-danger btn-sm m-2" id="button"> 
+            
+        <a class="btn btn-danger btn-sm m-2" routerLink="/inmueble">Atras</a>
+    </button>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="table-t">
+
+    <form [formGroup]="userForm" (ngSubmit)="guardar($event)" method="POST">
+        <div id="formulario">
+            <h1> Crear Asesor </h1>
+        </div>
+
+        <div id="tabla-formulario">
+            <label for="nombre">Nombres</label>
+            <input placeholder="Ingrese su nombre..." formControlName="nombre"  [(ngModel)]="nombre" type="text" id="tabla1">
+
+            <label for="celular">Celular </label>
+            <input placeholder="Escriba celular" formControlName="celular" [(ngModel)]="celular" type="text" id="tabla3">
+
+            <label for="email">Email </label>
+            <input placeholder="Escriba email" formControlName="email" [(ngModel)]="email" type="text" id="tabla5">
+
+            <label for="contrasena">Contrasena </label>
+            <input placeholder="Escriba contrasena" formControlName="contrasena" [(ngModel)]="contrasena" type="password" id="tabla6">
+           
+           
+        </div>
+        <button [disabled]="!userForm.valid" (click)="guardar($event)" name="registro" type="submit" class="btn btn-danger btn-sm m-2" id="button"> 
+            
+            <a class="btn btn-danger btn-sm m-2" >¡Registrarse!</a>
+        </button>
+        
+    </form>
+</div>
+
+
+    <table class="listado">
+        <thead>
+            <tr>
+                <th><h1>CODIGO</h1></th>
+                <th><h1>NOMBRE</h1></th>
+                <th><h1>CELULAR</h1></th>
+                <th><h1>EMAIL</h1></th>
+                <th colspan="2"><h1>OPCIONES</h1></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of poke">
+            <tr>
+                <th>{{item.codigo}}</th>
+                <td>{{item.nombre}}</td>
+                <td>{{item.celular}}</td>
+                <td>{{item.email}}</td>
+             
+                <td>
+                    <button type="button" (click)="delete(item)" class="bi bi-trash3-fill">ELIMINAR</button>
+                    <button type="button" (click)="update(item)" class="bi bi-trash3-fill">EDITAR</button>
+                 
+                  </td>
+
+        </tbody>
+
+
+    </table>
+
+<button name="registro" type="submit" class="btn btn-danger btn-sm m-2" id="button"> 
+            
+    <a class="btn btn-danger btn-sm m-2" routerLink="/inmueble">Atras</a>
+
+</button>
+
+< <!-- <a href="./../ingresar/poke/poke.component.html">CREAR POKEMON</a> -->

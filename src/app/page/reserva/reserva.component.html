@@ -1,0 +1,45 @@
+<div class="table-t">
+
+    <form [formGroup]="reserForm" (ngSubmit)="guardar($event)" method="POST">
+        <div id="formulario">
+            <h1> Formulario de Reserva </h1>
+        </div>
+
+        <div id="tabla-formulario">
+            <label for="tipo">Tipo de Rerserva</label>
+            <select  aria-label="inmub" formControlName="tipo" id="tabla"> Descripcion
+                <option >Alquiler        </option>
+                <option >Venta        </option>
+            </select>
+           
+
+            
+
+
+            <label for="hora">Hora </label>
+            <input placeholder="Escriba precio" formControlName="hora" type="time" id="tabla3">
+
+          
+            <label for="fecha">Fecha </label>
+            <input placeholder="Escriba Tipo de inmueble" formControlName="fecha" type="date" id="tabla5">
+
+            <label for="inmueble">Tipo de Inmueble </label>
+            <select  aria-label="inmueble" formControlName="inmueble" id="tabla"> Tipo de Inmueble
+                <option [ngValue]="item" *ngFor="let item of inmub">
+                        {{item.tipo_inmuble}}
+                </option>
+            </select>
+
+            <label for="usuario">Nombre de Inmueble </label>
+            <select  aria-label="usuario" formControlName="usuario" id="tabla"> Nombre de Inmueble
+                <option [ngValue]="item" *ngFor="let item of inmub">
+                        {{item.nombre}}
+                </option>
+            </select>
+
+        </div>
+        <button name="registro" type="submit" class="btn btn-danger btn-sm m-2"  id="button"> ¡Registrarse! </button>
+
+        
+    </form>
+</div>
